@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function useWindowSize() {
@@ -8,7 +8,6 @@ function useWindowSize() {
     g = d.getElementsByTagName('body')[0],
     x = w.innerWidth || e.clientWidth || g.clientWidth,
     y = w.innerHeight || e.clientHeight || g.clientHeight;
-
 
   return { x, y }
 }
@@ -21,9 +20,10 @@ const size = {
 
 
 function App() {
-  const [{ x, y }, setWindowSize] = React.useState(useWindowSize())
+  const [{ x, y }, setWindowSize] = useState(useWindowSize())
 
-  React.useEffect(() => {
+ 
+  useEffect(() => {
 
     function resizeWindow() {
       setWindowSize(useWindowSize())
@@ -34,16 +34,19 @@ function App() {
     return () => {
       window.removeEventListener("resize", resizeWindow);
     }
-  })
+  }, [x, y])
 
   function renderIframeSrc() {
-    if (x > size.mobile) {
-      return "https://app.powerbi.com/view?r=eyJrIjoiYzFjYWFlNzQtMzBhOS00MzExLWI0MzQtNDliYjg4ZjEzYTg1IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9"
-    } else if (x > size.tablet) {
-      return "https://app.powerbi.com/view?r=eyJrIjoiODIwYWY2MGEtYzRmMy00MTkyLTgwY2QtYjM1MWQxOGNkOTBlIiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9"
-    } else {
-      return "https://app.powerbi.com/view?r=eyJrIjoiODIwYWY2MGEtYzRmMy00MTkyLTgwY2QtYjM1MWQxOGNkOTBlIiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9"
+    const desktopEmbedUrl = 'https://app.powerbi.com/view?r=eyJrIjoiYzFjYWFlNzQtMzBhOS00MzExLWI0MzQtNDliYjg4ZjEzYTg1IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
+    const tabletEmbedUrl = 'https://app.powerbi.com/view?r=eyJrIjoiODIwYWY2MGEtYzRmMy00MTkyLTgwY2QtYjM1MWQxOGNkOTBlIiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
+    const mobileEmbedUrl = 'https://app.powerbi.com/view?r=eyJrIjoiODIwYWY2MGEtYzRmMy00MTkyLTgwY2QtYjM1MWQxOGNkOTBlIiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
 
+    if (x > size.web) {
+      return desktopEmbedUrl;
+    } else if (x > size.tablet && x < size.web) {
+      return tabletEmbedUrl;
+    } else {
+      return mobileEmbedUrl;
     }
   }
 
