@@ -38,8 +38,7 @@ function App() {
 			'https://app.powerbi.com/view?r=eyJrIjoiMjQzNzVmMjEtOGFjZi00ZDA0LWEwNDYtNjc2OWYxN2JlMzM0IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
 		const tabletEmbedUrl =
 			'https://app.powerbi.com/view?r=eyJrIjoiMjQzNzVmMjEtOGFjZi00ZDA0LWEwNDYtNjc2OWYxN2JlMzM0IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
-		const mobileEmbedUrl =
-			'https://app.powerbi.com/view?r=eyJrIjoiMjQzNzVmMjEtOGFjZi00ZDA0LWEwNDYtNjc2OWYxN2JlMzM0IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
+		const mobileEmbedUrl = 'https://www.vg.no';
 
 		if (x > size.web) {
 			return desktopEmbedUrl;
