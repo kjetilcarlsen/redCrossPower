@@ -35,9 +35,9 @@ function App() {
 
 	function renderIframeSrc() {
 		const desktopEmbedUrl =
-			'https://app.powerbi.com/view?r=eyJrIjoiMjQzNzVmMjEtOGFjZi00ZDA0LWEwNDYtNjc2OWYxN2JlMzM0IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
+			'https://app.powerbi.com/view?r=eyJrIjoiNDY1MzQ1ZjQtNWNlMC00Y2U4LWFkOWEtNTYwZjlkNGU5Zjc1IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
 		const tabletEmbedUrl =
-			'https://app.powerbi.com/view?r=eyJrIjoiMjQzNzVmMjEtOGFjZi00ZDA0LWEwNDYtNjc2OWYxN2JlMzM0IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
+			'https://app.powerbi.com/view?r=eyJrIjoiNDY1MzQ1ZjQtNWNlMC00Y2U4LWFkOWEtNTYwZjlkNGU5Zjc1IiwidCI6Ijc2YTJhZTVhLTlmMDAtNGY2Yi05NWVkLTVkMzNkNzdjNGQ2MSIsImMiOjh9';
 		const mobileEmbedUrl = 'https://www.sol.no';
 
 		if (x > size.web) {
